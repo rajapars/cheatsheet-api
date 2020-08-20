@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+  mysql-standalone:
+    container_name: mysql-standalone
+    image: mysql:8.0
+    ports:
+      - 13306:3306
+    networks:
+      - cheatsheet_network
+    environment:
+      MYSQL_DATABASE: CHEATSHEET
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+#    volumes:
+#    - mysql-db:/var/lib/mysql
+
+  cheatsheet:
+    container_name: cheatsheet
+    restart: on-failure
+    build: .
+    image: cheatsheet:0.1
+    ports:
+      - 8182:8182
+    depends_on:
+      - mysql-standalone
+    networks:
+      - cheatsheet_network
+
+networks:
+  cheatsheet_network:
+    name: cheatsheet_network
+
+#volumes:
+#  mysql-db:
+#    name: mysql-db

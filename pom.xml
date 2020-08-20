@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>xyz.tamanmain</groupId>
 	<artifactId>cheatsheet</artifactId>
-	<version>0.0.1</version>
+	<version>0.1</version>
 	<name>cheatsheet</name>
 	<description>Cheat Sheet Rest API</description>
 
