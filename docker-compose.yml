@@ -11,8 +11,6 @@ services:
     environment:
       MYSQL_DATABASE: CHEATSHEET
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: admin
 #    volumes:
 #    - mysql-db:/var/lib/mysql
 
@@ -20,7 +18,7 @@ services:
     container_name: cheatsheet
     restart: on-failure
     build: .
-    image: cheatsheet:0.1
+    image: cheatsheet:1.0
     ports:
       - 8182:8182
     depends_on:

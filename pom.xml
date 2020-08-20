@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>xyz.tamanmain</groupId>
 	<artifactId>cheatsheet</artifactId>
-	<version>0.1</version>
+	<version>1.0</version>
 	<name>cheatsheet</name>
 	<description>Cheat Sheet Rest API</description>
 
@@ -23,6 +23,19 @@
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
 			<version>2.0.0.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.6.1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.6.1</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
