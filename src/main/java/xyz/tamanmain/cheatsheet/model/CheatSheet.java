@@ -25,9 +25,15 @@ public class CheatSheet {
     private Boolean isPrivate;
 
     @Column(nullable = false)
+    private String tag;
+
+    @Column(nullable = false)
     private String title;
 
     @Column(nullable = false)
-    private String content;
+    private String cheat;
+
+    @Column()
+    private String description;
 
 }

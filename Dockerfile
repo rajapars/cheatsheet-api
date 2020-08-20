@@ -9,12 +9,11 @@
 #RUN mvn clean package -Dmaven.test.skip
 #
 #FROM openjdk:8-jdk-alpine
-#ARG JAR_FILE=target/*.jar
-#COPY --from=build /app/${JAR_FILE} app.jar
-#ENTRYPOINT ["java", "-jar", "app.jar"]
+#COPY --from=build /app/target/cheatsheet.jar cheatsheet.jar
+#ENTRYPOINT ["java", "-Dspring.profiles.active=docker", "-jar", "cheatsheet.jar"]
 
 ### For Development ###
 FROM openjdk:8-jdk-alpine
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java", "-jar", "app.jar"]
+COPY target/cheatsheet.jar cheatsheet.jar
+COPY wait-for.sh wait-for.sh
+ENTRYPOINT ["java", "-Dspring.profiles.active=docker", "-jar", "cheatsheet.jar"]

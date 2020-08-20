@@ -21,8 +21,7 @@ public class CheatSheetServiceImpl implements CheatSheetService {
 
     @Override
     public CheatSheet findCheatSheetById(Long id) {
-        CheatSheet cheatSheet = cheatSheetRepository.findById(id).orElse(new CheatSheet());
-        return cheatSheet;
+        return cheatSheetRepository.findById(id).orElse(new CheatSheet());
     }
 
     @Override
