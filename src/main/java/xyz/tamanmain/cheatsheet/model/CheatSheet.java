@@ -12,6 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Table(name = "cheatsheets")
 public class CheatSheet {
 
     @Id

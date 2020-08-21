@@ -29,6 +29,17 @@ services:
     networks:
       - cheatsheet_network
 
+  authentication:
+    container_name: authentication
+    build: ../authentication
+    image: authentication
+    ports:
+      - 8183:8183
+    depends_on:
+      - cheatsheet
+    networks:
+      - cheatsheet_network
+
 networks:
   cheatsheet_network:
     name: cheatsheet_network
