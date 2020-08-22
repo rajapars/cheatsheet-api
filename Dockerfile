@@ -11,8 +11,12 @@
 #COPY wait-for.sh wait-for.sh
 #ENTRYPOINT ["java", "-Dspring.profiles.active=docker", "-jar", "cheatsheet.jar"]
 
+### Initialize MySQL Database data ###
+FROM mysql:8.0
+ADD mysql-dump/schema.sql /docker-entrypoint-initdb.d
+
 ### For Development ###
-FROM openjdk:8-jdk-alpine
-COPY target/cheatsheet.jar cheatsheet.jar
-COPY wait-for.sh wait-for.sh
-ENTRYPOINT ["java", "-Dspring.profiles.active=docker", "-jar", "cheatsheet.jar"]
+#FROM openjdk:8-jdk-alpine
+#COPY target/cheatsheet.jar cheatsheet.jar
+#COPY wait-for.sh wait-for.sh
+#ENTRYPOINT ["java", "-Dspring.profiles.active=docker", "-jar", "cheatsheet.jar"]
